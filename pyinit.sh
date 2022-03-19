@@ -10,6 +10,7 @@ cp ~/.pyinit/templates/LICENSE .
 cp ~/.pyinit/templates/checkin.sh ./.pyinit
 cp ~/.pyinit/templates/checkout.sh ./.pyinit
 cp ~/.pyinit/templates/install.sh ./.pyinit
+cp ~/.pyinit/templates/.gitignore .
 
 git init
 
@@ -32,5 +33,6 @@ else
 
 fi
 
+git checkout -M main
 git add --all
 git commit -m "Initial commit"
