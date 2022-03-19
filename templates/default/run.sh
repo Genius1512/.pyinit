@@ -2,9 +2,14 @@ echo "Running $(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) && pwd)/scripts/__m
 echo "<----------RUN---------->"
 echo ""
 
+args=""
+for var in "$@"
+do
+    args="${args} ${var}"
+
 time="$(date +%s)"
 
-python3 "$(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) && pwd)/scripts/__main__.py"
+python3 "$(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) && pwd)/scripts/__main__.py ${args}"
 
 time="$(($(date +%s)-time))"
 
