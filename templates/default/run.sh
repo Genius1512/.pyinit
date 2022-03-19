@@ -6,6 +6,7 @@ args=""
 for var in "$@"
 do
     args="${args} ${var}"
+end
 
 time="$(date +%s)"
 
