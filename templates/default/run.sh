@@ -6,11 +6,11 @@ args=""
 for var in "$@"
 do
     args="${args} ${var}"
-end
+done
 
 time="$(date +%s)"
 
-python3 "$(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) && pwd)/scripts/__main__.py ${args}"
+python3 "$(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) && pwd)/scripts/__main__.py" ${args}
 
 time="$(($(date +%s)-time))"
 
