@@ -1,4 +1,7 @@
 def main():
+    """
+    Entry point
+    """
     print(__import__("sys").argv)
 
 

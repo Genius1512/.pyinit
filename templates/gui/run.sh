@@ -1,3 +1,4 @@
+source $(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) && pwd)/.venv/bin/activate
 echo "Running $(cd $(dirname $(dirname "${BASH_SOURCE[0]}")) && pwd)/scripts/__main__.py"
 echo "<----------RUN---------->"
 echo ""
@@ -17,3 +18,4 @@ time="$(($(date +%s)-time))"
 echo ""
 echo "<----------RUN---------->"
 echo "Done in $time seconds"
+deactivate
