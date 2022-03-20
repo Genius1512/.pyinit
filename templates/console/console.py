@@ -1,5 +1,6 @@
 from rich import print
 from rich.status import Status
+from os import system
 
 
 class Console:
@@ -39,6 +40,13 @@ class Console:
             print(f"[bold red]{object}[/bold red]", end=" ")
         print("")
 
+    @staticmethod
+    def clear():
+        if "win" in __import__("sys").platform:
+            system("cls")
+        else:
+            system("clear")
+
 
 class Spinner:
     def __init__(self, status: str, done_text: str = "Done."):
@@ -70,3 +78,5 @@ if __name__ == "__main__":
     spinner = Spinner("Doing...", "Done")
     __import__("time").sleep(2)
     spinner.stop()
+
+    Console.clear()
