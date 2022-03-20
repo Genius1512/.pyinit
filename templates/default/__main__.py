@@ -2,7 +2,7 @@ def main():
     """
     Entry point
     """
-    print(__import__("sys").argv)
+    pass
 
 
 if __name__ == "__main__":
