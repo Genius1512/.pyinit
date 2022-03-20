@@ -1,6 +1,6 @@
 # pyinit
 
-## TODO
+## Links
 
-- Create console.py
+- [LICENSE](LICENS)
 

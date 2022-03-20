@@ -10,3 +10,5 @@ p="$PS1"
 
 alias checkout="source $dir/checkout.sh; PS1='$p'"
 export PS1="(pyproj $(basename $(dirname $dir))) ${PS1}"
+
+echo "Checked in"
