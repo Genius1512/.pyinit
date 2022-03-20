@@ -17,6 +17,7 @@ cp ~/.pyinit/templates/LICENSE .
 cp ~/.pyinit/templates/checkin.sh ./.pyinit
 cp ~/.pyinit/templates/checkout.sh ./.pyinit
 cp ~/.pyinit/templates/install.sh ./.pyinit
+cp ~/.pyinit/templates/uninstall.sh ./.pyinit
 cp ~/.pyinit/templates/.gitignore .
 
 if [ $# -eq 0 ]; then
