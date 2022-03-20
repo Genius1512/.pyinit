@@ -19,15 +19,13 @@ cp ~/.pyinit/templates/checkout.sh ./.pyinit
 cp ~/.pyinit/templates/install.sh ./.pyinit
 cp ~/.pyinit/templates/.gitignore .
 
-git init
-
-if [ $1 = "gui" ]; then
+if [ $1 =~ "gui" ]; then
 	cp ~/.pyinit/templates/gui/__main__.py ./scripts
 	cp ~/.pyinit/templates/gui/build.sh ./.pyinit
 	cp ~/.pyinit/templates/gui/run.sh ./.pyinit
 	echo "" > requirements.txt
 
-elif [ $1 = "console" ]; then
+elif [ $1 =~ "console" ]; then
 	cp ~/.pyinit/templates/console/__main__.py ./scripts
 	cp ~/.pyinit/templates/console/console.py ./scripts
 
@@ -49,6 +47,7 @@ source .venv/bin/activate
 python3 -m pip install -r requirements.txt
 checkout
 
-git branch -M main
+git init
 git add --all
 git commit -m "Initial commit"
+git branch -M main
