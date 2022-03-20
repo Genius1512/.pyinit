@@ -19,7 +19,14 @@ cp ~/.pyinit/templates/checkout.sh ./.pyinit
 cp ~/.pyinit/templates/install.sh ./.pyinit
 cp ~/.pyinit/templates/.gitignore .
 
-if [ $1 =~ "gui" ]; then
+if [ $# -eq 0 ]; then
+	cp ~/.pyinit/templates/default/__main__.py ./scripts
+        cp ~/.pyinit/templates/default/build.sh ./.pyinit
+        cp ~/.pyinit/templates/default/run.sh ./.pyinit
+
+        echo "" > requirements.txt
+
+elif [ $1 =~ "gui" ]; then
 	cp ~/.pyinit/templates/gui/__main__.py ./scripts
 	cp ~/.pyinit/templates/gui/build.sh ./.pyinit
 	cp ~/.pyinit/templates/gui/run.sh ./.pyinit
@@ -45,9 +52,11 @@ fi
 
 source .venv/bin/activate
 python3 -m pip install -r requirements.txt
-checkout
+deactivate
 
-git init
+git init --quiet
 git add --all
-git commit -m "Initial commit"
+git commit -m "Initial commit" --quiet
 git branch -M main
+
+echo "Initialized new python project"
